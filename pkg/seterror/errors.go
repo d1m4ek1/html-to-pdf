@@ -1,17 +1,16 @@
-package newerror
+package seterror
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"runtime"
 	"time"
 )
 
-// Text errors message
+// MessSomethingWentWrong Text errors message
 const (
 	MessSomethingWentWrong = "Что-то пошло не так!"
-
-	MessUserNotAuthorized = "Пользователь не авторизован!"
 )
 
 type SetTmplTime interface {
@@ -85,7 +84,6 @@ func (w *AppError) LogError() error {
 	if _, err := os.Stat(w.DirToLogError); err != nil {
 		file, err := os.Create(w.DirToLogError)
 		if err != nil {
-			NewAppError("os.Create", err, "", true)
 			return err
 		}
 		defer file.Close()
@@ -93,7 +91,6 @@ func (w *AppError) LogError() error {
 
 	file, err := os.OpenFile(w.DirToLogError, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
-		NewAppError("os.OpenFile", err, "", true)
 		return err
 	}
 	defer file.Close()
@@ -112,13 +109,13 @@ func (w *AppError) Wrap() string {
 		w.ErrorMessage, w.CustomMessage, w.IsLine, w.File, setTime.Date(), setTime.Time(w.IsTimeAmPm))
 }
 
-func NewAppError(customMessage string, errorMessage error, dirToLogError string, isTimeAmPm bool) {
+func SetAppError(customMessage string, errorMessage error) {
 	_, file, isLine, _ := runtime.Caller(1)
 
 	var wrap = &AppError{
-		DirToLogError: dirToLogError,
+		DirToLogError: "./logs/errors.log",
 		NowTime:       time.Now(),
-		IsTimeAmPm:    isTimeAmPm,
+		IsTimeAmPm:    true,
 		CustomMessage: customMessage,
 		IsLine:        isLine,
 		File:          file,
@@ -126,5 +123,8 @@ func NewAppError(customMessage string, errorMessage error, dirToLogError string,
 	}
 
 	fmt.Println(wrap.Wrap())
-	wrap.LogError()
+	if err := wrap.LogError(); err != nil {
+		log.Fatal(err)
+		return
+	}
 }

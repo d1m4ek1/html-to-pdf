@@ -1,2 +1,5 @@
 token
 .idea
+downloadFile
+temporaryStorage/zips/*
+temporaryStorage/pdfFiles/*

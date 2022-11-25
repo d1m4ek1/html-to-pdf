@@ -1,0 +1,307 @@
+
+
+ERROR:
+	Error: wkhtmltopdf not found;
+	Message: wkhtmltopdf.NewPDFGenerator;
+	Line: 20;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 8:44 PM Second: 22;
+
+ERROR:
+	Error: wkhtmltopdf not found;
+	Message: wkhtmltopdf.NewPDFGenerator;
+	Line: 20;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 8:45 PM Second: 14;
+
+ERROR:
+	Error: wkhtmltopdf not found;
+	Message: wkhtmltopdf.NewPDFGenerator;
+	Line: 20;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 8:49 PM Second: 29;
+
+ERROR:
+	Error: Loading page (1/2)
+[>                                                           ] 0%[==============================>                             ] 50%Warning: Blocked access to file                                   
+Error: Failed to load about:blank, with network status code 301 and http status code 0 - Protocol "about" is unknown
+[==============================>                             ] 51%[============================================================] 100%Printing pages (2/2)                                               
+[>                                                           ] Done                                                           
+Exit with code 1 due to network error: ProtocolUnknownError
+;
+	Message: pdf.Create();
+	Line: 27;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 9:04 PM Second: 06;
+
+ERROR:
+	Error: Loading page (1/2)
+[>                                                           ] 0%[==============================>                             ] 50%Warning: Blocked access to file                                   
+Error: Failed to load about:blank, with network status code 301 and http status code 0 - Protocol "about" is unknown
+[==============================>                             ] 51%[============================================================] 100%Printing pages (2/2)                                               
+[>                                                           ] Done                                                           
+Exit with code 1 due to network error: ProtocolUnknownError
+;
+	Message: pdf.Create();
+	Line: 30;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 9:14 PM Second: 08;
+
+ERROR:
+	Error: Loading page (1/2)
+[>                                                           ] 0%[==============================>                             ] 50%Warning: Blocked access to file                                   
+Error: Failed to load about:blank, with network status code 301 and http status code 0 - Protocol "about" is unknown
+[==============================>                             ] 51%[============================================================] 100%Printing pages (2/2)                                               
+[>                                                           ] Done                                                           
+Exit with code 1 due to network error: ProtocolUnknownError
+;
+	Message: pdf.Create();
+	Line: 32;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 9:25 PM Second: 29;
+
+ERROR:
+	Error: Loading page (1/2)
+[>                                                           ] 0%[==============================>                             ] 50%Warning: Blocked access to file                                   
+Error: Failed to load about:blank, with network status code 301 and http status code 0 - Protocol "about" is unknown
+[============================================================] 100%Printing pages (2/2)                                               
+[>                                                           ] Done                                                           
+Exit with code 1 due to network error: ProtocolUnknownError
+;
+	Message: pdf.Create();
+	Line: 34;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 9:32 PM Second: 41;
+
+ERROR:
+	Error: http: no such file;
+	Message: context.Request.FormFile;
+	Line: 103;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 9:37 PM Second: 12;
+
+ERROR:
+	Error: exit status 1;
+	Message: pdf.Create();
+	Line: 37;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 9:43 PM Second: 03;
+
+ERROR:
+	Error: exit status 1;
+	Message: pdf.Create();
+	Line: 36;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:02 PM Second: 25;
+
+ERROR:
+	Error: Error: This version of wkhtmltopdf is built against an unpatched version of QT, and does not support more than one input document.
+Exit with code 1, due to unknown error.
+;
+	Message: pdf.Create();
+	Line: 35;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:03 PM Second: 04;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf/downloadFiles: no such file or directory;
+	Message: pdf.Create();
+	Line: 40;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:11 PM Second: 28;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf/downloadFile: permission denied;
+	Message: pdf.Create();
+	Line: 40;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:12 PM Second: 24;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf/downloadFile: permission denied;
+	Message: pdf.Create();
+	Line: 40;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:13 PM Second: 21;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf: permission denied;
+	Message: pdf.Create();
+	Line: 40;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:13 PM Second: 40;
+
+ERROR:
+	Error: fork/exec /usr/local/bin/wkhtmltopdf: no such file or directory;
+	Message: pdf.Create();
+	Line: 41;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:15 PM Second: 33;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf: permission denied;
+	Message: pdf.Create();
+	Line: 41;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:15 PM Second: 50;
+
+ERROR:
+	Error: fork/exec /home/dmitrydvp/go/src/html-to-pdf: permission denied;
+	Message: pdf.Create();
+	Line: 41;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 10:18 PM Second: 21;
+
+ERROR:
+	Error: open temporaryStorage/zips/QyWFrHSYQPee/downloadFile/index.html: no such file or directory;
+	Message: os.Create;
+	Line: 86;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 0;
+
+ERROR:
+	Error: open temporaryStorage/zips/QyWFrHSYQPee/downloadFile/index.html: no such file or directory;
+	Message: f.openFile;
+	Line: 130;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 0;
+
+ERROR:
+	Error: open temporaryStorage/zips/QyWFrHSYQPee/downloadFile/index.html: no such file or directory;
+	Message: readFile;
+	Line: 168;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 0;
+
+ERROR:
+	Error: open temporaryStorage/zips/tNIDGHKegOxN/downloadFile/index.html: no such file or directory;
+	Message: os.Create;
+	Line: 86;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 45;
+
+ERROR:
+	Error: open temporaryStorage/zips/tNIDGHKegOxN/downloadFile/index.html: no such file or directory;
+	Message: f.openFile;
+	Line: 130;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 45;
+
+ERROR:
+	Error: open temporaryStorage/zips/tNIDGHKegOxN/downloadFile/index.html: no such file or directory;
+	Message: readFile;
+	Line: 168;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 10:59 PM Second: 45;
+
+ERROR:
+	Error: open temporaryStorage/zips/VkSlQCEoAtXz/index.html: no such file or directory;
+	Message: os.Create;
+	Line: 86;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:0 PM Second: 41;
+
+ERROR:
+	Error: open temporaryStorage/zips/VkSlQCEoAtXz/index.html: no such file or directory;
+	Message: f.openFile;
+	Line: 130;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:0 PM Second: 41;
+
+ERROR:
+	Error: open temporaryStorage/zips/VkSlQCEoAtXz/index.html: no such file or directory;
+	Message: readFile;
+	Line: 168;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:0 PM Second: 41;
+
+ERROR:
+	Error: open temporaryStorage/zips/ZsdQtVjgQrGO: is a directory;
+	Message: os.Create;
+	Line: 78;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:06 PM Second: 13;
+
+ERROR:
+	Error: open temporaryStorage/zips/ZsdQtVjgQrGO: is a directory;
+	Message: f.openFile;
+	Line: 122;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:06 PM Second: 13;
+
+ERROR:
+	Error: open temporaryStorage/zips/ZsdQtVjgQrGO: is a directory;
+	Message: readFile;
+	Line: 160;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:06 PM Second: 13;
+
+ERROR:
+	Error: open QvKmWVKAjZSS/index.html: no such file or directory;
+	Message: os.Open;
+	Line: 26;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/createpdf.go;
+	Date: 24 November 2022;
+	Time: 11:11 PM Second: 16;
+
+ERROR:
+	Error: open QvKmWVKAjZSS/index.html: no such file or directory;
+	Message: create.create();
+	Line: 98;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:11 PM Second: 16;
+
+ERROR:
+	Error: open QvKmWVKAjZSS/index.html: no such file or directory;
+	Message: f.openFile;
+	Line: 122;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:11 PM Second: 16;
+
+ERROR:
+	Error: open QvKmWVKAjZSS/index.html: no such file or directory;
+	Message: readFile;
+	Line: 160;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:11 PM Second: 16;
+
+ERROR:
+	Error: http: no such file;
+	Message: context.Request.FormFile;
+	Line: 167;
+	File: /home/dmitrydvp/go/src/html-to-pdf/pkg/createpdf/readFormFile.go;
+	Date: 24 November 2022;
+	Time: 11:39 PM Second: 35;

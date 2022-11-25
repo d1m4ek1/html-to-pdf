@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sens-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-block {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 3px;
+    border: 2px solid #9a9a9a;
+}
+
+.upload-block > div, .upload-block > button {
+    width: 100%;
+}
+
+.input-upload {
+    height: 70px;
+    border: 2px dashed black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input_upload {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
