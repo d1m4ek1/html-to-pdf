@@ -1,10 +1,14 @@
 const dataFile = {
-    fileZIP: new FormData(),
-    filePDF: null
+    fileZIP: new FormData()
 }
 
 const inputUploadFile = document.getElementById("input_upload")
-inputUploadFile.addEventListener("change", (event) => {
+const labelUpload = document.getElementById("upload_label")
+
+
+const buttonSubmit = document.getElementById("submit_upload")
+
+const getFileFromInput = (event) => {
     const file = event.target.files[0]
 
     if (file.type !== "application/zip") {
@@ -16,9 +20,11 @@ inputUploadFile.addEventListener("change", (event) => {
     }
 
     dataFile.fileZIP.set("zip", file)
-})
+}
 
 const uploadFile = async () => {
+    labelUpload.innerText = "Uploading..."
+
     const response = await fetch("/api/upload", {
         method: "POST",
         body: dataFile.fileZIP
@@ -26,8 +32,13 @@ const uploadFile = async () => {
 
     const json = await response.json()
 
-    console.log(json)
+    if (json.successfully) {
+        labelUpload.innerText = "Uploaded"
+        setTimeout(() => {
+            labelUpload.innerText = "Upload"
+        }, 4000)
+    }
 }
 
-const buttonSubmit = document.getElementById("submit_upload")
+inputUploadFile.addEventListener("change", getFileFromInput)
 buttonSubmit.addEventListener("click", uploadFile)

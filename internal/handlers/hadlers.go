@@ -6,6 +6,7 @@ import (
 	"html-to-pdf/internal/controllers/templates"
 )
 
+// InitTemplateHandlers Инициализация запросов для загрузки HTML-шаблонов
 func InitTemplateHandlers(rtr *gin.Engine) {
 	index := rtr.Group("/")
 	{
@@ -13,6 +14,7 @@ func InitTemplateHandlers(rtr *gin.Engine) {
 	}
 }
 
+// InitAPIHandlers Инициализация api запросов
 func InitAPIHandlers(rtr *gin.Engine) {
 	upload := rtr.Group("/api")
 	{

@@ -6,6 +6,7 @@ import (
 	"crypto/rand"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"html-to-pdf/pkg/logging"
 	"html-to-pdf/pkg/seterror"
 	"io"
 	"math/big"
@@ -19,18 +20,22 @@ type FormFile struct {
 	ReadiedFile *zip.Reader
 	Header      *multipart.FileHeader
 	Context     *gin.Context
+
+	NewName         string
+	CreatedFileSize int64
 }
 
 type JobWithZIP interface {
-	UploadFile() error
+	UploadFile() (string, int64, error)
 
-	checkUploadedFile() bool
+	checkUploadedFile(createLogging logging.CreateLogging) bool
 
 	readFile() error
 
 	saveFile() error
 }
 
+// generateName Генерирует имя pdf-файла
 func generateName() string {
 	var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 	var characters = 12
@@ -48,6 +53,7 @@ func generateName() string {
 	return string(b)
 }
 
+// validExtension Проверяет допустимые расширения файлов внутри zip-файла
 func validExtension(filename, filetype string) bool {
 	switch filetype {
 	case "files":
@@ -67,9 +73,10 @@ func validExtension(filename, filetype string) bool {
 	return false
 }
 
+// saveFile Сохраняет файлы zip-файла в временное хранилище файлов
 func (f *FormFile) saveFile() error {
-	var nameDir string = generateName()
-	pathToTemporaryStorage := fmt.Sprintf("temporaryStorage/zips/%s", nameDir)
+	f.NewName = generateName()
+	pathToTemporaryStorage := fmt.Sprintf("temporaryStorage/zips/%s", f.NewName)
 
 	if err := os.MkdirAll(pathToTemporaryStorage, 0777); err != nil {
 		seterror.SetAppError("os.MkdirAll", err)
@@ -86,17 +93,21 @@ func (f *FormFile) saveFile() error {
 	}
 
 	var createPDF createPDF = &CreatePDF{
-		NameDir: nameDir,
+		NameDir: f.NewName,
 	}
 
-	if err := createPDF.create(); err != nil {
+	fileSize, err := createPDF.create()
+	if err != nil {
 		seterror.SetAppError("create.create()", err)
 		return err
 	}
 
+	f.CreatedFileSize = fileSize
+
 	return nil
 }
 
+// readFile Читает и получает файлы, zip-файла
 func (f *FormFile) readFile() error {
 	var err error
 	buffer := new(bytes.Buffer)
@@ -121,40 +132,49 @@ func (f *FormFile) readFile() error {
 	return nil
 }
 
-func (f *FormFile) checkUploadedFile() bool {
+// checkUploadedFile Проверяет загруженный файл на достоверность типа и размера
+func (f *FormFile) checkUploadedFile(createLogging logging.CreateLogging) bool {
 	if f.Header.Size > 2147483648 {
+		createLogging.SetLogWarning("The file size exceeds the allowed 2 gigabytes")
 		return false
 	}
 
 	if f.Header.Header.Get("Content-Type") != "application/zip" {
+		createLogging.SetLogWarning("The file type is not a zip file")
 		return false
 	}
 
 	return true
 }
 
-func (f *FormFile) UploadFile() error {
+// UploadFile Получает файлы из запроса, затем читает и сохраняет файлы
+func (f *FormFile) UploadFile() (string, int64, error) {
 	var err error
+
+	var createLogging logging.CreateLogging = logging.NewLogging("", "", 0)
 
 	if err := f.Context.Request.ParseForm(); err != nil {
 		seterror.SetAppError("context.Request.ParseForm", err)
-		return err
+		return "", 0, err
 	}
 
 	f.File, f.Header, err = f.Context.Request.FormFile("zip")
+	if f.File == nil {
+		return "", 0, nil
+	}
 	if err != nil {
 		seterror.SetAppError("context.Request.FormFile", err)
-		return err
+		return "", 0, err
 	}
 
-	if !f.checkUploadedFile() {
-		return nil
+	if !f.checkUploadedFile(createLogging) {
+		return "", 0, nil
 	}
 
 	if err := f.readFile(); err != nil {
 		seterror.SetAppError("readFile", err)
-		return err
+		return "", 0, err
 	}
 
-	return nil
+	return f.NewName + ".pdf", f.CreatedFileSize, nil
 }

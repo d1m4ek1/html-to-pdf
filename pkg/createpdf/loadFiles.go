@@ -10,6 +10,7 @@ import (
 	"strings"
 )
 
+// containAndRegexpHTML Заменяет пути на абсолютные
 func containAndRegexpHTML(filename, content, pathToTemporaryStorage string) string {
 	if strings.Contains(filename, ".html") {
 		path, _ := os.Getwd()
@@ -27,6 +28,7 @@ func containAndRegexpHTML(filename, content, pathToTemporaryStorage string) stri
 	return content
 }
 
+// loadFiles Загружает статичные файлы HTML и CSS в временное хранилище
 func loadFiles(file *zip.File, pathToTemporaryStorage string) error {
 	contentReadCloser, err := file.Open()
 	if err != nil {
